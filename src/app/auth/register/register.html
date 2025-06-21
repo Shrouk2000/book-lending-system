@@ -1,0 +1,15 @@
+<div class="auth-container">
+  <h2>Register</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <input formControlName="name" placeholder="Name" />
+    <input formControlName="email" type="email" placeholder="Email" />
+    <input formControlName="password" type="password" placeholder="Password" />
+    <select formControlName="role">
+      <option value="" disabled selected>Select Role</option>
+      <option value="Member">Member</option>
+      <option value="Admin">Admin</option>
+    </select>
+    <button type="submit" [disabled]="loading">Register</button>
+    <div *ngIf="errorMsg" class="error">{{ errorMsg }}</div>
+  </form>
+</div>

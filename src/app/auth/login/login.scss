@@ -1,0 +1,78 @@
+// filepath: d:\Angular\book-lending-system\src\app\auth\register\register.scss
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+form {
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(60, 60, 60, 0.15);
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  max-width: 90vw;
+  gap: 1.2rem;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #f57c00;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+input, select {
+  padding: 0.75rem 1rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.2s;
+  outline: none;
+  background: #fafafa;
+}
+
+input:focus, select:focus {
+  border-color: #f57c00;
+}
+
+button {
+  padding: 0.75rem 1rem;
+  background: linear-gradient(90deg, #f6d365 0%, #fda085 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(245, 124, 0, 0.08);
+}
+
+button:hover {
+  background: linear-gradient(90deg, #fda085 0%, #f6d365 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.error {
+  color: #d32f2f;
+  background: #ffeaea;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.98rem;
+  text-align: center;
+  margin-top: -0.5rem;
+}
+
+@media (max-width: 500px) {
+  form {
+    min-width: 90vw;
+    padding: 1.5rem 0.5rem;
+  }
+}

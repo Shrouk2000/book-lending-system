@@ -1,0 +1,9 @@
+<div class="auth-container">
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <input formControlName="email" type="email" placeholder="Email" />
+    <input formControlName="password" type="password" placeholder="Password" />
+    <button type="submit" [disabled]="loading">Login</button>
+    <div *ngIf="errorMsg" class="error">{{ errorMsg }}</div>
+  </form>
+</div>
