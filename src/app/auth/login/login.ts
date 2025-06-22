@@ -37,13 +37,14 @@ export class LoginComponent {
       next: (res) => {
         this.authService.saveToken(res.token);
         const role = res.user.role;
-
-        if (role === 'Admin') {
-          this.router.navigate(['/admin']);
-        } else {
-          this.router.navigate(['/member']);
-        }
-        this.loading = false;
+this.router.navigate(['/books']);
+this.loading=false;
+        // if (role === 'Admin') {
+        //   this.router.navigate(['/admin']);
+        // } else {
+        //   this.router.navigate(['/member']);
+        // }
+        // this.loading = false;
       },
       error: (err) => {
         this.loading = false;

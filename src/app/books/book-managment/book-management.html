@@ -1,0 +1,18 @@
+<div class="book-management-container">
+  <h2>Book Management</h2>
+  <form [formGroup]="bookForm" (ngSubmit)="editingBook ? updateBook() : addBook()">
+    <input formControlName="title" placeholder="Title" />
+    <input formControlName="author" placeholder="Author" />
+    <textarea formControlName="description" placeholder="Description"></textarea>
+    <button type="submit">{{ editingBook ? 'Update' : 'Add' }} Book</button>
+    <button *ngIf="editingBook" type="button" (click)="editingBook = undefined; bookForm.reset()">Cancel</button>
+  </form>
+  <div *ngIf="errorMsg" class="error">{{ errorMsg }}</div>
+  <ul>
+    <li *ngFor="let book of books">
+      <strong>{{ book.title }}</strong> by {{ book.author }}
+      <button (click)="editBook(book)">Edit</button>
+      <button (click)="deleteBook(book)">Delete</button>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,9 @@
+<div class="book-detail-container" *ngIf="book">
+  <h2>{{ book.title }}</h2>
+  <p><strong>Author:</strong> {{ book.author }}</p>
+  <p>{{ book.description }}</p>
+  <p *ngIf="!book.available">Currently borrowed. <span *ngIf="book.dueDate">Due: {{ book.dueDate | date }}</span></p>
+  <p *ngIf="book.available">Available for borrowing.</p>
+</div>
+<div *ngIf="loading">Loading...</div>
+<div *ngIf="errorMsg" class="error">{{ errorMsg }}</div>

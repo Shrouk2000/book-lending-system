@@ -1,0 +1,17 @@
+<div class="book-list-container">
+  <h2>Book Catalog</h2>
+  <div *ngIf="loading">Loading...</div>
+  <div *ngIf="errorMsg" class="error">{{ errorMsg }}</div>
+  <div *ngFor="let book of books" class="book-card">
+    <h3>{{ book.title }}</h3>
+    <p><strong>Author:</strong> {{ book.author }}</p>
+    <p>{{ book.description }}</p>
+    <button *ngIf="book.available" (click)="borrowBook(book)">Borrow</button>
+    <span *ngIf="!book.available">
+      <span>Borrowed</span>
+      <span *ngIf="book.dueDate"> (Due: {{ book.dueDate | date }})</span>
+      <button (click)="returnBook(book)">Return</button>
+    </span>
+    <button (click)="viewDetails(book)">Details</button>
+  </div>
+</div>
